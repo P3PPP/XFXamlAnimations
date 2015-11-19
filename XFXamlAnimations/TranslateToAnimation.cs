@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
-namespace Xamarin.Forms.XamlAnimations
+namespace XFXamlAnimations
 {
 	/// <summary>
 	/// TranslationX and TranslationY animation using Xamarin.Forms.ViewExtensions.TranslateTo method.

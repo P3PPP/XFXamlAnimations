@@ -1,6 +1,7 @@
 ﻿using System;
+using Xamarin.Forms;
 
-namespace Xamarin.Forms.XamlAnimations
+namespace XFXamlAnimations
 {
 	/// <summary>
 	/// Base class of animation that changes the property of the target.

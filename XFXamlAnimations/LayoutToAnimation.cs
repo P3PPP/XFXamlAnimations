@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
-namespace Xamarin.Forms.XamlAnimations
+namespace XFXamlAnimations
 {
 	/// <summary>
 	/// Bounds animation using Xamarin.Forms.ViewExtensions.LayoutTo method.

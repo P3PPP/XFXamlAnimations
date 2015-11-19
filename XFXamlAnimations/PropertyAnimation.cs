@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Reflection;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
-namespace Xamarin.Forms.XamlAnimations
+namespace XFXamlAnimations
 {
 	/// <summary>
 	/// Base class of the animation that changes a property.

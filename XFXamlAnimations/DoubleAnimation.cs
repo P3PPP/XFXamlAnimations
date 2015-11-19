@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Xamarin.Forms.XamlAnimations
+namespace XFXamlAnimations
 {
 	/// <summary>
 	/// Animation that changes the Double type property.

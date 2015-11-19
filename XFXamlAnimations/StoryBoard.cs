@@ -2,8 +2,9 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
-namespace Xamarin.Forms.XamlAnimations
+namespace XFXamlAnimations
 {
 	/// <summary>
 	/// A StoryBoard coordinates a set of timelines. StroryBoard plays children in parallel.

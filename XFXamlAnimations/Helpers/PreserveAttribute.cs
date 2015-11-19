@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Xamarin.Forms.XamlAnimations
+namespace XFXamlAnimations
 {
 	public sealed class PreserveAttribute : Attribute
 	{

@@ -1,6 +1,7 @@
 ﻿using System;
+using Xamarin.Forms;
 
-namespace Xamarin.Forms.XamlAnimations
+namespace XFXamlAnimations
 {
 	[Preserve(AllMembers = true)]
 	public class UInt32Converter : TypeConverter
