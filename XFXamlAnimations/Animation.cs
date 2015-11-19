@@ -26,7 +26,7 @@ namespace Xamarin.Forms.XamlAnimations
 
 		#region Duration BindableProperty
 		public static readonly BindableProperty DurationProperty =
-			BindableProperty.Create<Animation,uint>(p => p.Duration, 0,
+			BindableProperty.Create<Animation,uint>(p => p.Duration, 250,
 				propertyChanged: (bindable, oldValue, newValue) =>
 				((Animation)bindable).Duration = newValue);
 
