@@ -7,11 +7,11 @@ using Xamarin.Forms;
 namespace XFXamlAnimations
 {
 	/// <summary>
-	/// A StoryBoard coordinates a set of timelines. StroryBoard plays children in parallel.
+	/// A StoryBoard coordinates a set of timelines.
 	/// </summary>
 	[Preserve(AllMembers = true)]
 	[ContentProperty("Children")]
-	public class StoryBoard : Timeline
+	public abstract class StoryBoard : Timeline
 	{
 		/// <summary>
 		/// Gets the child Timelines.
@@ -20,12 +20,6 @@ namespace XFXamlAnimations
 		{
 			get;
 		} = new List<Timeline>();
-
-		protected override Task BeginAnimation()
-		{
-			var tasks =  Children.Select(x => x.Begin()).ToList();
-			return Task.WhenAll(tasks);
-		}
 	}
 }
 
