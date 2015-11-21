@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:xa="clr-namespace:XFXamlAnimations;assembly=XFXamlAnimations"
+			 x:Class="Sample.PropertynAnimationPage">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<xa:SequentialStoryBoard x:Key="colorStoryBoardKey">
+				<xa:ColorAnimation Target="{x:Reference box1}"
+								   TargetPropertyName="Color"
+								   From="Green"
+								   To="Blue"
+								   Duration="1500" />
+				<xa:ColorAnimation Target="{x:Reference box1}"
+								   TargetPropertyName="Color"
+								   From="Blue"
+								   To="Green"
+								   Duration="1500" />
+			</xa:SequentialStoryBoard>
+
+			<xa:SequentialStoryBoard x:Key="doubleStoryBoardKey">
+				<xa:DoubleAnimation Target="{x:Reference box1}"
+									TargetPropertyName="WidthRequest"
+									From="130"
+									To="260"
+									Easing="CubicOut"
+									Duration="1000" />
+				<xa:DoubleAnimation Target="{x:Reference box1}"
+									TargetPropertyName="WidthRequest"
+									From="260"
+									To="130"
+									Easing="BounceOut"
+									Duration="1000" />
+			</xa:SequentialStoryBoard>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<BoxView Grid.Row="0"
+					 x:Name="box1"
+					 HorizontalOptions="Center"
+					 VerticalOptions="Center"
+					 HeightRequest="130"
+					 WidthRequest="130"
+					 Color="Green" />
+
+			<StackLayout Grid.Row="1" >
+				<Button Text="Color animation"
+						HorizontalOptions="CenterAndExpand" >
+					<Button.Triggers>
+						<EventTrigger Event="Clicked">
+							<xa:BeginStoryBoard StoryBoard="{StaticResource colorStoryBoardKey}" />
+						</EventTrigger>
+					</Button.Triggers>
+				</Button>
+				<Button Text="Double animation"
+						HorizontalOptions="CenterAndExpand" >
+					<Button.Triggers>
+						<EventTrigger Event="Clicked">
+							<xa:BeginStoryBoard StoryBoard="{StaticResource doubleStoryBoardKey}" />
+						</EventTrigger>
+					</Button.Triggers>
+				</Button>
+			</StackLayout>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

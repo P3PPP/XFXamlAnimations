@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:xa="clr-namespace:XFXamlAnimations;assembly=XFXamlAnimations"
+			 x:Class="Sample.ViewExtentionsAnimationPage">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<xa:ParallelStoryBoard x:Key="parallelStoryBoardKey">
+				<xa:RelRotateToAnimation Target="{x:Reference box1}"
+										 Rotation="-360"
+										 Duration="1000" />
+				<xa:RelRotateToAnimation Target="{x:Reference box2}"
+										 Rotation="360"
+										 Duration="1000" />
+			</xa:ParallelStoryBoard>
+			<xa:SequentialStoryBoard x:Key="sequentialStoryBoardKey">
+				<xa:RelRotateToAnimation Target="{x:Reference box1}"
+										 Rotation="-360"
+										 Duration="1000" />
+				<xa:RelRotateToAnimation Target="{x:Reference box2}"
+										 Rotation="360"
+										 Duration="1000" />
+			</xa:SequentialStoryBoard>
+
+			<xa:ParallelStoryBoard x:Key="nestedStoryBoardKey">
+				<xa:SequentialStoryBoard >
+					<xa:RelRotateToAnimation Target="{x:Reference box1}"
+											 Rotation="-360"
+											 Duration="1000" />
+					<xa:RelRotateToAnimation Target="{x:Reference box1}"
+											 Rotation="360"
+											 Duration="1000"/>
+				</xa:SequentialStoryBoard>
+				<xa:SequentialStoryBoard >
+					<xa:ScaleToAnimation Target="{x:Reference box1}"
+										 Scale="2"
+										 Duration="1000" />
+					<xa:ScaleToAnimation Target="{x:Reference box1}"
+										 Scale="1"
+										 Duration="1000" />
+				</xa:SequentialStoryBoard>
+			</xa:ParallelStoryBoard>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<BoxView Grid.Row="0"
+					 Grid.Column="0"
+					 x:Name="box1"
+					 HorizontalOptions="Center"
+					 VerticalOptions="Center"
+					 HeightRequest="130"
+					 WidthRequest="130"
+					 Color="Green" />
+			<BoxView Grid.Row="0"
+					 Grid.Column="1"
+					 x:Name="box2"
+					 HorizontalOptions="Center"
+					 VerticalOptions="Center"
+					 HeightRequest="130"
+					 WidthRequest="130"
+					 Color="Blue" />
+
+			<StackLayout Grid.Row="1"
+						 Grid.Column="0"
+						 Grid.ColumnSpan="2" >
+				<Button Text="Parallel animation"
+						HorizontalOptions="CenterAndExpand" >
+					<Button.Triggers>
+						<EventTrigger Event="Clicked">
+							<xa:BeginStoryBoard StoryBoard="{StaticResource parallelStoryBoardKey}" />
+						</EventTrigger>
+					</Button.Triggers>
+				</Button>
+				<Button Text="Sequential animation"
+						HorizontalOptions="CenterAndExpand" >
+					<Button.Triggers>
+						<EventTrigger Event="Clicked">
+							<xa:BeginStoryBoard StoryBoard="{StaticResource sequentialStoryBoardKey}" />
+						</EventTrigger>
+					</Button.Triggers>
+				</Button>
+				<Button Text="Nested story baord animation"
+						HorizontalOptions="CenterAndExpand" >
+					<Button.Triggers>
+						<EventTrigger Event="Clicked">
+							<xa:BeginStoryBoard StoryBoard="{StaticResource nestedStoryBoardKey}" />
+						</EventTrigger>
+					</Button.Triggers>
+				</Button>
+			</StackLayout>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
