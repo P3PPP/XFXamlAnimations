@@ -1,1 +1,94 @@
 # XFXamlAnimations
+
+__XFXamlAnimations__ is a library to define the animation in Xamarin Forms XAML.
+
+## Example usage
+
+At first, call `XFXamlAnimations.XamlAnimations.Init();` in constructor of App class.
+
+```
+public App()
+{
+	XFXamlAnimations.XamlAnimations.Init();
+	MainPage = new FirstPage();
+}
+```
+
+Next, use `BeginStoryBoard` action in XAML to start animations. A StoryBoard can include Animations and StoryBoards.
+
+```
+<Button x:Name="button" Text="Begin animation">
+	<Button.Triggers>
+		<EventTrigger Event="Clicked">
+			<xa:BeginStoryBoard>
+				<xa:BeginStoryBoard.StoryBoard>
+					<xa:ParallelStoryBoard>
+						<xa:RelRotateToAnimation Target="{x:Reference button}"
+												 Rotation="360"
+												 Duration="1000"
+												 Easing="BounceOut" />
+					</xa:ParallelStoryBoard>
+				</xa:BeginStoryBoard.StoryBoard>
+			</xa:BeginStoryBoard>
+		</EventTrigger>
+	</Button.Triggers>
+</Button>
+```
+
+## Parallel animation
+
+```
+<xa:ParallelStoryBoard>
+	<xa:RelRotateToAnimation Target="{x:Reference box1}"
+							 Rotation="-360"
+							 Duration="1000" />
+	<xa:RelRotateToAnimation Target="{x:Reference box2}"
+							 Rotation="360"
+							 Duration="1000" />
+</xa:ParallelStoryBoard>
+```
+
+## Sequential animation
+
+```
+<xa:SequentialStoryBoard>
+	<xa:RelRotateToAnimation Target="{x:Reference box1}"
+							 Rotation="-360"
+							 Duration="1000" />
+	<xa:RelRotateToAnimation Target="{x:Reference box2}"
+							 Rotation="360"
+							 Duration="1000" />
+</xa:SequentialStoryBoard>
+```
+
+## Animatoins defined in `Xamarin.Forms.ViewExtentions`
+
+* FadeToAnimation (Opacity)
+* LayoutToAnimation (Bounds)
+* RelRotateToAnimation (Rotation)
+* RelScaleToAnimation (Scale)
+* RotateToAnimation (Rotation)
+* RotateXToAnimation (Rotation)
+* RotateYToAnimation (Rotation)
+* ScaleToAnimation (Scale)
+* TranslateToAnimation (X and Y)
+
+## Property based animaton
+
+```
+<xa:ColorAnimation Target="{x:Reference box1}"
+				   TargetPropertyName="Color"
+				   From="Blue"
+				   To="Green"
+				   Duration="1500" />
+
+<xa:DoubleAnimation Target="{x:Reference box1}"
+					TargetPropertyName="WidthRequest"
+					From="130"
+					To="260"
+					Duration="1000" />
+```
+
+## License
+
+The MIT License (MIT)
