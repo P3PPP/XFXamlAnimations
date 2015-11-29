@@ -10,7 +10,7 @@ At first, call `XFXamlAnimations.XamlAnimations.Init();` in constructor of App c
 public App()
 {
 	XFXamlAnimations.XamlAnimations.Init();
-	MainPage = new FirstPage();
+	MainPage = new MyPage();
 }
 ```
 
