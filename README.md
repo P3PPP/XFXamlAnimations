@@ -2,6 +2,12 @@
 
 __XFXamlAnimations__ is a library to define the animation in Xamarin Forms XAML.
 
+To install XFXamlAnimations, run the following command in the Package Manager Console 
+
+```
+PM> Install-Package XFXamlAnimations 
+```
+
 ## Example usage
 
 At first, call `XFXamlAnimations.XamlAnimations.Init();` in constructor of App class.
