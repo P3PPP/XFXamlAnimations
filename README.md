@@ -75,7 +75,7 @@ Next, use `BeginStoryBoard` action in XAML to start animations. A StoryBoard can
 </xa:SequentialStoryBoard>
 ```
 
-## Animatoins defined in `Xamarin.Forms.ViewExtentions`
+## Animatoins defined in Xamarin.Forms.ViewExtentions
 
 * FadeToAnimation (Opacity)
 * LayoutToAnimation (Bounds)
