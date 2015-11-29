@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>XFXamlAnimations</id>
+    <version>$version$</version>
+    <title>Xamarin.Forms.XamlAnimations</title>
+    <authors>@ticktackmobile</authors>
+    <licenseUrl>https://github.com/P3PPP/XFXamlAnimations/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/P3PPP/XFXamlAnimations</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>XFXamlAnimations is a library to define the animation in Xamarin Forms XAML.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright (c) 2015 P3PPP</copyright>
+    <dependencies>
+      <dependency id="Xamarin.Forms" version="1.5.1.6471"/>
+    </dependencies>
+    <tags>XFXamlAnimations XamlAnimations</tags>
+  </metadata>
+  <files>
+    <file src="bin/$configuration$/XFXamlAnimations.dll" target="lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/" />
+  </files>
+</package>
