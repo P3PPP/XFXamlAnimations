@@ -17,22 +17,30 @@ public App()
 Next, use `BeginStoryBoard` action in XAML to start animations. A StoryBoard can include Animations and StoryBoards.
 
 ```
-<Button x:Name="button" Text="Begin animation">
-	<Button.Triggers>
-		<EventTrigger Event="Clicked">
-			<xa:BeginStoryBoard>
-				<xa:BeginStoryBoard.StoryBoard>
-					<xa:ParallelStoryBoard>
-						<xa:RelRotateToAnimation Target="{x:Reference button}"
-												 Rotation="360"
-												 Duration="1000"
-												 Easing="BounceOut" />
-					</xa:ParallelStoryBoard>
-				</xa:BeginStoryBoard.StoryBoard>
-			</xa:BeginStoryBoard>
-		</EventTrigger>
-	</Button.Triggers>
-</Button>
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:xa="clr-namespace:XFXamlAnimations;assembly=XFXamlAnimations"
+			 x:Class="Sample.MyPage">
+	<ContentPage.Content>
+		<Button x:Name="button" Text="Begin animation">
+		    <Button.Triggers>
+		        <EventTrigger Event="Clicked">
+		            <xa:BeginStoryBoard>
+		                <xa:BeginStoryBoard.StoryBoard>
+		                    <xa:ParallelStoryBoard>
+		                        <xa:RelRotateToAnimation Target="{x:Reference button}"
+		                                                 Rotation="360"
+		                                                 Duration="1000"
+		                                                 Easing="BounceOut" />
+		                    </xa:ParallelStoryBoard>
+		                </xa:BeginStoryBoard.StoryBoard>
+		            </xa:BeginStoryBoard>
+		        </EventTrigger>
+		    </Button.Triggers>
+		</Button>
+	</ContentPage.Content>
+</ContentPage>
 ```
 
 ## Parallel animation
